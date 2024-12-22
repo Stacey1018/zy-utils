@@ -1,39 +1,36 @@
 const path = require("path")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
-module.exports = {
-  mode: "production",
-  entry: "./src/index.ts",
-  output: {
-    filename: "index.js",
-    path: path.resolve(__dirname, "dist"),
-    // library: 'zt-common-utils',
-    library: {
-      name: "zy-utils",
-      type: "umd",
+module.exports = (env) => {
+  const format = env && env.format
+  const isESM = env.format === "esm"; // 根据环境变量判断格式
+  return {
+    mode: "production",
+    entry: "./src/index.ts",
+    output: {
+      filename: format === "esm" ? "index.esm.js" : "index.umd.js",
+      path: path.resolve(__dirname, "dist"),
+      library:
+        format === "esm"
+          ? { type: "module" }
+          : { name: "zy-utils", type: "umd" }, // 根据格式动态设置 library
     },
-    // 打包生成库可以通过esm/commonjs/reqirejs的语法引入
-    // libraryTarget: 'umd',
-  },
-  resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
-  },
-  module: {
-    // rules: [
-    //   {
-    //     test: /\.(js|jsx|ts|tsx)$/,
-    //     exclude: /(node_modules|bower_components)/,
-    //     use: {
-    //       loader: "babel-loader",
-    //     },
-    //   },
-    // ],
-    rules: [
+    experiments: {
+      outputModule: isESM, // 如果是 ESM 格式，则启用 outputModule
+    },
+    resolve: {
+      extensions: [".ts", ".tsx", ".js", ".jsx"],
+    },
+    module: {
+      rules: [
         {
           test: /\.ts$/,
-          use: 'ts-loader',
+          use: "ts-loader",
           exclude: /node_modules/,
         },
       ],
-  },
-  plugins: [],
+    },
+    plugins: [
+    ],
+  }
 }

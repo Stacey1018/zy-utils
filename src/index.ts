@@ -1,1 +1,1 @@
-export { sum } from "./add"
+export { sum } from "./sum"
