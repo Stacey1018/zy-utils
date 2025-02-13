@@ -25,6 +25,7 @@
     "@types/jest": "^29.5.14",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
+    "lint-staged": "^15.4.3",
     "ts-jest": "^29.2.5",
     "ts-loader": "^9.5.1",
     "typescript": "^5.7.2",
@@ -34,5 +35,10 @@
   "dependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "path": "^0.12.7"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "npm run test"
+    ]
   }
 }
