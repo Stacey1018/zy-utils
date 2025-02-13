@@ -78,8 +78,11 @@ jest.config.js
 package.json
 
 ```json
+ 
 {
-    "test": "jest"
+  "scripts": {
+    "test": "jest",
+  },
 }
 
 ```
