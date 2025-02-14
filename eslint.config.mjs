@@ -12,6 +12,7 @@ export default [
     rules: {
       "no-unused-vars": "warn", //  规则配置
       "no-undef": "warn",
+      "@typescript-eslint/no-require-imports": "off",
     },
   },
 ]
