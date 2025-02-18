@@ -1,0 +1,10 @@
+{
+    // Comments are supported, like tsconfig.json
+    "entryPoints": ["./src/index.ts"],
+    "out": "docs",
+    // "plugin": ["../dist"],
+      // "theme": "yaf"
+    // "theme": "polymesh-docs"
+    // "theme": "typedoc-theme-zt"
+  }
+  
