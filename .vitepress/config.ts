@@ -51,7 +51,7 @@ function treeToItems(tree: IndexTree) {
 }
 
 const tree = fg
-  .sync(["./docs/markdown/*.md"])
+  .sync(["./docs/*.md"])
   .map((path) => basename(path))
   .reduce((tree, file) => {
     getTree(file, "", tree)
@@ -59,7 +59,7 @@ const tree = fg
   }, {})
 
   const functionTree =  fg
-  .sync(["./docs/markdown/functions/*.md"])
+  .sync(["./docs/functions/*.md"])
   .map((path) => basename('1'+path))
   .reduce((tree, file) => {
     getTree(file, "/functions/", tree)
@@ -67,7 +67,7 @@ const tree = fg
   }, {})
 
   const classTree =  fg
-  .sync(["./docs/markdown/classes/*.md"])
+  .sync(["./docs/classes/*.md"])
   .map((path) => basename('1'+path))
   .reduce((tree, file) => {
     getTree(file, "/classes/", tree)
@@ -83,7 +83,7 @@ const classTreeList : DefaultTheme.SidebarItem[] = treeToItems(classTree)
 export default defineConfig({
   title: "zy-utils",
   description: "A VitePress Site",
-  srcDir:'./docs/markdown', // 注意文件源目录
+  srcDir:'./docs', // 注意文件源目录
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
