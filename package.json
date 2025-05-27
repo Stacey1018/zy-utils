@@ -1,6 +1,7 @@
 {
   "name": "zy-utils",
   "version": "1.0.0",
+  "type": "module",
   "description": "## 初始化",
   "main": "dist/index.umd.js",
   "exports": {
@@ -18,7 +19,10 @@
     "build": "rm -rf dist && npm run build:esm && npm run build:umd",
     "test": "jest",
     "prepare": "husky",
-     "docs":"typedoc --options ./typedoc.json"
+    "docs": "typedoc --options ./typedoc.json",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
   "keywords": [],
   "author": "",
@@ -33,9 +37,11 @@
     "lint-staged": "^15.4.3",
     "ts-jest": "^29.2.5",
     "ts-loader": "^9.5.1",
-    "typedoc": "^0.27.7",
+    "typedoc": "^0.28.4",
+    "typedoc-plugin-markdown": "^4.6.3",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.24.0",
+    "vitepress": "^1.6.3",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1"
   },

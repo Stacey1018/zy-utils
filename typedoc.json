@@ -1,10 +1,17 @@
 {
-    // Comments are supported, like tsconfig.json
-    "entryPoints": ["./src/index.ts"],
-    "out": "docs",
-    // "plugin": ["../dist"],
-      // "theme": "yaf"
-    // "theme": "polymesh-docs"
-    // "theme": "typedoc-theme-zt"
-  }
-  
+  // Comments are supported, like tsconfig.json
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./src/index.ts"],
+  "outputs": [
+    {
+      "name": "html",
+      "path": "./docs/html"
+    },
+    {
+      // requires typedoc-plugin-markdown
+      "name": "markdown",
+      "path": "./docs/markdown"
+    }
+  ],
+  "plugin": ["typedoc-plugin-markdown"]
+}
