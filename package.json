@@ -12,6 +12,9 @@
       "require": "./dist/index.umd.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "types": "dist/index.d.ts",
   "scripts": {
     "build:esm": "webpack --config webpack.config.js --env format=esm",
