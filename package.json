@@ -1,6 +1,6 @@
 {
-  "name": "zy-common-utils",
-  "version": "1.0.0",
+  "name": "zy-function-utils",
+  "version": "1.0.1",
   "type": "module",
   "description": "## 初始化",
   "main": "dist/index.umd.js",
